@@ -165,5 +165,17 @@ void pohon2(){
   rect(85,550,10,20);
 }
 void draw(){
-
+  matahari();
+  gunung1();
+  gunung2();
+  awan1();
+  awan2();
+  tebing();
+  lapang();
+  tepikolam();
+  kolam();
+  sungai();
+  air();
+  pohon1();
+  pohon2();
 }
