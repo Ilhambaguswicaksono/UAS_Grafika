@@ -3,24 +3,43 @@ size (1000,600);
 background(#C13000);
 }
 
-void awan1(){
+void langit(){
+  fill(#C13000);
+  beginShape();
+  vertex(0,0);
+  vertex(1000,0);
+  vertex(1000,300);
+  vertex(0,300);
+  endShape();
+}
+float a1=0;
+float a2=0;
+void awan1(float a,float b){
   noStroke();
   fill(#D3CECD);
-  ellipse(220,140,130,50);
-  ellipse(320,140,150,70);
-  ellipse(380,140,100,30);
-  ellipse(250,165,40,20);
-  ellipse(160,140,30,20);
+  ellipse(a+220,140,130,50);
+  ellipse(a+320,140,150,70);
+  ellipse(a+380,140,100,30);
+  ellipse(a+250,165,40,20);
+  ellipse(a+160,140,30,20);
+    a1=a1+1;
+  if(a1>950){
+    a1=-300;
+  }
 }
 
-void awan2(){
+void awan2(float c,float d){
   noStroke();
   fill(#D3CECD);
-  ellipse(620,70,130,50);
-  ellipse(720,70,150,70);
-  ellipse(780,70,100,30);
-  ellipse(650,95,40,20);
-  ellipse(560,70,30,20); 
+  ellipse(c+620,70,130,50);
+  ellipse(c+720,70,150,70);
+  ellipse(c+780,70,100,30);
+  ellipse(c+650,95,40,20);
+  ellipse(c+560,70,30,20); 
+   a2=a2-1;
+  if(a2<-900){
+    a2=+300;
+  }
 }
 void matahari(){
   noStroke();
@@ -165,11 +184,12 @@ void pohon2(){
   rect(85,550,10,20);
 }
 void draw(){
+  langit();
   matahari();
   gunung1();
   gunung2();
-  awan1();
-  awan2();
+  awan1(0+a1,0);
+  awan2(0+a2,0);
   tebing();
   lapang();
   tepikolam();
