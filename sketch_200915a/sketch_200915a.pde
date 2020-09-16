@@ -1,6 +1,5 @@
 void setup(){
 size (1000,600);
-background(#C13000);
 smooth();
 }
 float l=0;
@@ -52,7 +51,7 @@ void awan2(float c,float d){
   ellipse(c+780,70,100,30);
   ellipse(c+650,95,40,20);
   ellipse(c+560,70,30,20); 
-  {a2=a2-1;}
+  {a2=a2-0.5;}
   if(a2<-900){
     a2=+300;
   }
@@ -226,7 +225,29 @@ void pohon2(){
   strokeWeight(1);
   line(y1+35,y2,z1-35,z2);
   line(z1,z2+35,z3,z4-35);
+}
+  
+float spd=1;
+float o;
 
+void balon(){
+  spd=spd+0.3;
+  stroke(0);
+  strokeWeight(2);
+  fill(#FF005E);
+  ellipse(200+spd,200,200,50);
+  line(160+spd,225,160+spd,235);
+  line(240+spd,225,240+spd,235);
+  line(130+spd,182,130+spd,217);
+  line(165+spd,178,165+spd,222);
+  line(200+spd,175,200+spd,225);
+  line(235+spd,178,235+spd,222);
+  line(270+spd,182,270+spd,217);
+  fill(#812309);
+  rect(160+spd,235,80,20);
+  if(spd>950){
+    spd=-500;
+  }
 }
 void draw(){
   langit();
@@ -243,5 +264,6 @@ void draw(){
   air();
   pohon1();
   pohon2();
+  balon();
   gambar(mouseX,mouseY,mouseX,mouseY,mouseX,mouseY,mouseX,mouseY,mouseX,mouseY);
 }
