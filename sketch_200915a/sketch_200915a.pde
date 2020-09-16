@@ -38,7 +38,7 @@ void awan1(float a,float b){
   ellipse(a+380,140,100,30);
   ellipse(a+250,165,40,20);
   ellipse(a+160,140,30,20);
-    a1=a1+1;
+  a1=a1+1;
   if(a1>950){
     a1=-300;
   }
@@ -52,7 +52,7 @@ void awan2(float c,float d){
   ellipse(c+780,70,100,30);
   ellipse(c+650,95,40,20);
   ellipse(c+560,70,30,20); 
-   a2=a2-1;
+  {a2=a2-1;}
   if(a2<-900){
     a2=+300;
   }
@@ -124,11 +124,24 @@ void tepikolam(){
   vertex(830,600);
   endShape();
 }
+float s1=0;
+float s2=0.2;
+float s3=0;
+float s4=0.1;
 void sungai(){
   fill(#5DA0B2);
-  ellipse(500,500,200,100);
+  s1=s1+s2;
+  ellipse(500,520,170+s1,60+s1);
+  if((s1>25) ||(s1<0) ){
+    s2=s2*-1;
+  }
   fill(#71B2C4);
-  ellipse(500,500,150,70);
+  s3=s3+s4;
+  ellipse(500,520,130+s3,40+s3);
+  if((s3>20) || (s3<0)){
+    s4=s4*-1;
+  }
+
 }
 void tebing(){
   fill(#5C5F5E);
@@ -201,6 +214,20 @@ void pohon2(){
   fill(#293E25);
   rect(85,550,10,20);
 }
+  void gambar(float x1,float x2,float y1,float y2,float y3,float y4,
+  float z1,float z2,float z3,float z4){
+  noCursor();
+  stroke(255,0,0);
+  strokeWeight(4);
+  fill(255,0,0,0);
+  ellipse(x1,x2,80,80);
+  strokeWeight(2);
+  ellipse(x1,x2,20,20);
+  strokeWeight(1);
+  line(y1+35,y2,z1-35,z2);
+  line(z1,z2+35,z3,z4-35);
+
+}
 void draw(){
   langit();
   matahari();
@@ -216,4 +243,5 @@ void draw(){
   air();
   pohon1();
   pohon2();
+  gambar(mouseX,mouseY,mouseX,mouseY,mouseX,mouseY,mouseX,mouseY,mouseX,mouseY);
 }
