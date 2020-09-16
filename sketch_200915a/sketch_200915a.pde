@@ -1,17 +1,33 @@
 void setup(){
 size (1000,600);
 background(#C13000);
+smooth();
 }
-
+float l=0;
+float k=0;
+float g;
+float h;
+float diam;
 void langit(){
-  fill(#C13000);
+  l=l-0.03;
+  k=k-0.05;
+  fill(200+k,100+l,0);
   beginShape();
   vertex(0,0);
   vertex(1000,0);
   vertex(1000,300);
   vertex(0,300);
   endShape();
+  if(m1>30){
+  diam = random(5);
+  g = random(width);
+  h = random(height);
+  noStroke();
+  fill(255, 255, 255);
+  ellipse(g, h, diam, diam);
+  }
 }
+
 float a1=0;
 float a2=0;
 void awan1(float a,float b){
@@ -41,10 +57,12 @@ void awan2(float c,float d){
     a2=+300;
   }
 }
+float m1=0;
 void matahari(){
+  m1=m1+0.01;
   noStroke();
   fill(255,255,0);
-  ellipse(560,270,100,100);
+  ellipse(560,m1+270,100,100);
 }
 void lapang(){
   fill(#486F07);
