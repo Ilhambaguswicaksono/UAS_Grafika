@@ -63,6 +63,14 @@ void matahari(){
   fill(255,255,0);
   ellipse(560,m1+270,100,100);
 }
+float bul=0;
+void bulan(){
+  if (m1>35){
+    bul=bul+0.01;
+    fill(255,255,255,200);
+    ellipse(560,-25+bul,50,50);
+  }
+}
 void lapang(){
   fill(#486F07);
   beginShape();
@@ -252,6 +260,7 @@ void balon(){
 void draw(){
   langit();
   matahari();
+  bulan();
   gunung1();
   gunung2();
   awan1(0+a1,0);
